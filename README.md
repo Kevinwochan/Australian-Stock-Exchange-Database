@@ -27,13 +27,19 @@ Furthermore, if information from the previous day is needed for your calculation
     
     create or replace view Q4(Sector, Number) as ...
 
-### Find all the executives (i.e., their names) that are affiliated with companies in the sector of "Technology". If an executive is affiliated with more than one company, he/she is counted if one of these companies is in the sector of "Technology".
+### Find all the executives (i.e., their names) that are affiliated with companies in the sector of "Technology". 
+
+If an executive is affiliated with more than one company, he/she is counted if one of these companies is in the sector of "Technology".
+
     create or replace view Q5(Name) as ...
 
 ### List all the company names in the sector of "Services" that are located in Australia with the first digit of their zip code being 2.
     create or replace view Q6(Name) as ...
 
-### Create a database view of the ASX table that contains previous Price, Price change (in amount, can be negative) and Price gain (in percentage, can be negative). (Note that the first trading day should be excluded in your result.) For example, if the PrevPrice is 1.00, Price is 0.85; then Change is -0.15 and Gain is -15.00 (in percentage but you do not need to print out the percentage sign).
+### Create a database view of the ASX table that contains previous Price, Price change (in amount, can be negative) and Price gain (in percentage, can be negative). (Note that the first trading day should be excluded in your result.) 
+
+For example, if the PrevPrice is 1.00, Price is 0.85; then Change is -0.15 and Gain is -15.00 (in percentage but you do not need to print out the percentage sign).
+
     create or replace view Q7("Date", Code, Volume, PrevPrice, Price, Change, Gain) as ...
 
 ### Find the most active trading stock (the one with the maximum trading volume; if more than one, output all of them) on every trading day. Order your output by "Date" and then by Code.
@@ -54,10 +60,14 @@ Furthermore, if information from the previous day is needed for your calculation
 ### Find all the companies with a registered address in Australia, in a Sector where there are no overseas companies in the same Sector. i.e., they are in a Sector that all companies there have local Australia address.
     create or replace view Q13(Code, Name, Address, Zip, Sector) as ...
 
-### Calculate stock gains based on their prices of the first trading day and last trading day (i.e., the oldest "Date" and the most recent "Date" of the records stored in the ASX table). Order your result by Gain in descending order and then by Code in ascending order.
+### Calculate stock gains based on their prices of the first trading day and last trading day (i.e., the oldest "Date" and the most recent "Date" of the records stored in the ASX table).
+Order your result by Gain in descending order and then by Code in ascending order.
+
     create or replace view Q14(Code, BeginPrice, EndPrice, Change, Gain) as ...
 
-### For all the trading records in the ASX table, produce the following statistics as a database view (where Gain is measured in percentage). AvgDayGain is defined as the summation of all the daily gains (in percentage) then divided by the number of trading days (as noted above, the total number of days here should exclude the first trading day).
+### For all the trading records in the ASX table, produce the following statistics as a database view (where Gain is measured in percentage). 
+AvgDayGain is defined as the summation of all the daily gains (in percentage) then divided by the number of trading days (as noted above, the total number of days here should exclude the first trading day).
+
     create or replace view Q15(Code, MinPrice, AvgPrice, MaxPrice, MinDayGain, AvgDayGain, MaxDayGain) as ...
 
 ### Create a trigger on the Executive table, to check and disallow any insert or update of a Person in the Executive table to be an executive of more than one company. 
