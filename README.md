@@ -1,5 +1,7 @@
 # Australian-Stock-Exchange-Database
+
 A series of queries and triggers to validate database entries and retrieve useful information
+
 In this Assignment i learn to:
 - formulate SQL queries;
 - populate an RDBMS with a real dataset, and analyse the data;
@@ -7,12 +9,6 @@ In this Assignment i learn to:
 - create SQL views;
 - understand the limitations of SQL queries; and
 - create SQL functions (when needed).
-
-## Description
-In this assignment, the schema for a simple ASX (The Australian Securities Exchange) database is provided to you. ASX is Australia's primary securities exchange. Based on the provided schema: asx-schema.sql, you are required to answer the following questions by formulating SQL queries. You may create SQL functions or PLpgSQL to help you, if and only if the standard SQL query language is not expressive and powerful enough to satisfy a particular question. To enable auto-marking, your queries should be formulated as SQL views, using the view names and attribute names provided.
-If any queries below require you to order/rank your result in a certain way, unless it is mentioned explicitly, they are supposed to be in ascending order. If order is specified, correctness of your solution will include the correct ordering of the output from your solution.
-
-Furthermore, if information from the previous day is needed for your calculation in any queries below, please disregard the first trading when you count the total number of trading days. Otherwise you should include the first day into your calculation. For example, suppose that there are totally 5 trading days in the database. To calculate the average price of a given stock, please sum its prices and then divided by 5 days. To calculate its average gain in percentage, please sum its gains (only 4 of them) and then divided by 4 days.
 
 ### List all the company names (and countries) that are incorporated outside Australia.
     create or replace view Q1(Name, Country) as ...
